@@ -4,7 +4,8 @@ import React from 'react';
 import styled from "styled-components";
 const H = styled.div`
   padding: 4em;
-  background: papayawhip;
+  background: white;
+  width: 50%;
 `;
 const Button = styled.button`
   /* Adapt the colors based on primary prop */

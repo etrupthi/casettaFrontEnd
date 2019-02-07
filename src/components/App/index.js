@@ -2,21 +2,16 @@ import React from "react";
 import HotelList from "./hlist/index";
 import ViewHotel from "./viewhotel/index";
 import NavBar from "./navbar/index";
+import "./image/index.css"
+//import BackgroundImage from 'react-background-image-loader';
+//import bg from '/Users/AkhilaV/Documents/casettafrontend/src/components/App/image/bg1.jpeg';
+//import './image';
 import {
    BrowserRouter as Router,
    Route,
    Switch,
    Redirect,
 } from 'react-router-dom'
-//import styled from "styled-components";
-// const Title = styled.h1`
-//   font-size: 1.5em;
-//   text-align: center;
-//   color: palevioletred;
-// `;
-
-
-// const tableHeaders = ['Id','Name','Location','Price'];
 
 class App extends React.Component{
    constructor(props){
@@ -65,7 +60,7 @@ class App extends React.Component{
                         history={props.history}/>
                      </div>
                   )
-               }}/>
+               }} />
                <Route exact path="/viewhotel/:id"  render={(props) => {
                   const hid = props.match.params.id
                   const hdata=this.state.data[hid-1]
@@ -82,6 +77,7 @@ class App extends React.Component{
             
                   return(
                      <div>
+                       
                         <NavBar/>
                         <ViewHotel
                            name  = {newRecord.name} 
