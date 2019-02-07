@@ -1,81 +1,67 @@
 import React from 'react';
 import {
- 
+  Collapse,
   Navbar,
+  NavbarToggler,
+  NavbarBrand,
   Nav,
   NavItem,
-  //NavDropdown,
-  //MenuItem
-} from 'react-bootstrap';
-  import 'bootstrap/dist/css/bootstrap.min.css';
- 
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
 
- class NavBar extends React.Component {
+class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    
-    this.state = {
-        isOpen: false,
-        tetherConfig: {
-          target: '#tether',
-          attachment: 'middle left',
-          targetAttachment: 'middle right',
-          classPrefix: 'bs-tether',
-          classes: { element: 'popover', enabled: 'open' },
-          constraints: [
-            { to: 'scrollParent', attachment: 'together none' },
-            { to: 'window', attachment: 'together none' }
-          ]
-        }
-      };
-      this.toggle = this.toggle.bind(this);
-      this.state = {
-        isOpen: false
-      };
-    }
-    
-state = {
-    isOpen: false
-  };
 
-toggleCollapse = () => {
-    this.setState({ isOpen: !this.state.isOpen });
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
   }
-  
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
-}
-
+  }
   render() {
     return (
       <div>
-        <Navbar inverse collapseOnSelect bg="light">
-  {/* <Navbar.Header>
-    <Navbar.Brand>
-      <a href="/home">Casetta</a>
-    </Navbar.Brand>
-  </Navbar.Header> */}
-  <Nav>
-    {/* <NavDropdown eventKey={3} title="Price" id="basic-nav-dropdown">
-      <MenuItem eventKey={3.1}>Rs.3000</MenuItem>
-      <MenuItem eventKey={3.2}>Rs.4000</MenuItem>
-      <MenuItem eventKey={3.3}>Rs.5000</MenuItem>
-      <MenuItem divider />
-      <MenuItem eventKey={3.4}>Reset</MenuItem>
-    </NavDropdown> */}
-    <NavItem eventKey={1} href="/details">
-      login
-    </NavItem>
-    <NavItem eventKey={2} href="#">
-      sign up
-    </NavItem>
-  </Nav>
-</Navbar>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">Casetta</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/viewhotel/:id">Owner Login</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              </NavItem>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                 Price
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem>
+                    1000
+                  </DropdownItem>
+                  <DropdownItem>
+                    2000
+                  </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>
+                    Reset
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </Nav>
+          </Collapse>
+        </Navbar>
       </div>
-    )
+    );
   }
 }
-
 export default NavBar;
