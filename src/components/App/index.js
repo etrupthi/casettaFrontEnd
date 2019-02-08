@@ -2,16 +2,14 @@ import React from "react";
 import HotelList from "./hlist/index";
 import ViewHotel from "./viewhotel/index";
 import NavBar from "./navbar/index";
-import "./image/index.css"
-//import BackgroundImage from 'react-background-image-loader';
-//import bg from '/Users/AkhilaV/Documents/casettafrontend/src/components/App/image/bg1.jpeg';
-//import './image';
+import "./image/index.css";
 import {
    BrowserRouter as Router,
    Route,
    Switch,
    Redirect,
 } from 'react-router-dom'
+import FormPage from "./ownerlogin";
 
 class App extends React.Component{
    constructor(props){
@@ -20,7 +18,6 @@ class App extends React.Component{
        data:[]
       }
    }
-
       componentDidMount(){
 
          const url = "http://localhost:9000/hotels"; 
@@ -77,7 +74,6 @@ class App extends React.Component{
             
                   return(
                      <div>
-                       
                         <NavBar/>
                         <ViewHotel
                            name  = {newRecord.name} 
@@ -88,6 +84,9 @@ class App extends React.Component{
                      </div>
                   )
                }}/>
+               <Route exact path="/login">
+               <FormPage/>
+               </Route>
                <Redirect to="/home"/>
             </Switch> 
          </Router>
