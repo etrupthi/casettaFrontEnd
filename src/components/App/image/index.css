@@ -1,4 +1,4 @@
-body {
+.homeb {
     background-image: url("./bg1.jpeg");
     background-repeat: no-repeat;
     background-position: center;
@@ -6,3 +6,20 @@ body {
     position: relative;
     height: 100vh; 
   }
+  .viewhb {
+    background-image: url("./bg2.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 100vh; 
+  }
+  .loginb {
+    background-image: url("./bg2.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 100vh; 
+  }
+  

@@ -3,13 +3,15 @@ import HotelList from "./hlist/index";
 import ViewHotel from "./viewhotel/index";
 import NavBar from "./navbar/index";
 import "./image/index.css";
+import SignUpPage from "./ownersignup";
+import LoginPage from "./ownerlogin";
 import {
    BrowserRouter as Router,
    Route,
    Switch,
    Redirect,
 } from 'react-router-dom'
-import FormPage from "./ownerlogin";
+
 
 class App extends React.Component{
    constructor(props){
@@ -50,8 +52,8 @@ class App extends React.Component{
             <Switch>
                <Route exact path="/home" render={(props) => {
                   return(
-                     <div>
-                        <NavBar/>
+                     <div className="homeb">
+                        <NavBar/><br></br>
                         <HotelList 
                         hotel={this.state.data}
                         history={props.history}/>
@@ -73,7 +75,7 @@ class App extends React.Component{
                   }
             
                   return(
-                     <div>
+                     <div className="viewhb">
                         <NavBar/>
                         <ViewHotel
                            name  = {newRecord.name} 
@@ -84,9 +86,20 @@ class App extends React.Component{
                      </div>
                   )
                }}/>
-               <Route exact path="/login">
-               <FormPage/>
-               </Route>
+               <Route exact path="/signup" render={(props) => {
+                  return(
+                     <div className="loginb">
+                        <SignUpPage/>
+                     </div>
+                  )
+               }} />
+               <Route exact path="/login" render={(props) => {
+                  return(
+                     <div className="loginb">
+                        <LoginPage/>
+                     </div>
+                  )
+               }} />
                <Redirect to="/home"/>
             </Switch> 
          </Router>
