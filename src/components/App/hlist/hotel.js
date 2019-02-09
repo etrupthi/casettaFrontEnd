@@ -19,7 +19,7 @@ onViewClick(){
 
 render(){
         return(
-            <div><br></br>
+            <div ><br></br>
             <MDBCol>
             <MDBCard style={{ width: "45em" ,height: "22em",background: "black" }} >
                 <MDBCardImage className="img-fluid" src={himage} waves />
