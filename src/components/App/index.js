@@ -5,6 +5,7 @@ import NavBar from "./navbar/index";
 import "./image/index.css";
 import SignUpPage from "./ownersignup";
 import LoginPage from "./ownerlogin";
+import FooterPage from "./footer";
 import {
    BrowserRouter as Router,
    Route,
@@ -57,6 +58,7 @@ class App extends React.Component{
                         <HotelList 
                         hotel={this.state.data}
                         history={props.history}/>
+                        <FooterPage/>
                      </div>
                   )
                }} />
@@ -76,13 +78,16 @@ class App extends React.Component{
             
                   return(
                      <div className="viewhb">
-                        <NavBar/>
-                        <ViewHotel
-                           name  = {newRecord.name} 
-                           location = {newRecord.location} 
-                           price  = {newRecord.price}
-                           history={props.history}
-                         />
+                        <div style={{height:"100vh"}}>
+                           <NavBar/>
+                           <ViewHotel
+                              name  = {newRecord.name} 
+                              location = {newRecord.location} 
+                              price  = {newRecord.price}
+                              history={props.history}
+                           />
+                         </div>
+                         <FooterPage/>
                      </div>
                   )
                }}/>

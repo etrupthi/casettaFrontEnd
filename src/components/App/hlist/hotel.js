@@ -1,7 +1,7 @@
 import React from 'react';
-//import ViewHotel from "../viewhotel/index";
 import himage from "/Users/AkhilaV/Documents/casettafrontend/src/components/App/image/bg2.jpeg";
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
+import "./index.css";
 class Hotel extends React.Component{
 
     constructor(props){
@@ -19,7 +19,7 @@ onViewClick(){
 
 render(){
         return(
-            <div ><br></br>
+            <div className="hstyle">
             <MDBCol>
             <MDBCard style={{ width: "45em" ,height: "22em",background: "black" }} >
                 <MDBCardImage className="img-fluid" src={himage} waves />

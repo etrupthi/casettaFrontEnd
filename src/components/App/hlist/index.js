@@ -1,5 +1,6 @@
 import React from "react";
 import Hotel from "./hotel";
+import "./index.css";
 
 class HotelList extends React.Component{
     
@@ -13,7 +14,7 @@ class HotelList extends React.Component{
     }
     render(){
         return(
-            <div>
+            <div className="hliststyle">
                 {this.props.hotel.map(h => <Hotel key={h.id} id={h.id} name={h.name} location={h.location} price={h.price} history={this.props.history} onViewClick={this.onViewClick}/>)}
             </div>
         )
