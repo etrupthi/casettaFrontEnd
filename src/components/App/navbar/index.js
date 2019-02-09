@@ -12,6 +12,7 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
   import "./index.css";
+  import SearchBar from "../searchbar";
   
 class NavBar extends React.Component {
   constructor(props) {
@@ -35,6 +36,9 @@ class NavBar extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
+            <NavItem>
+            <SearchBar/>
+            </NavItem>
               <NavItem>
                 <NavLink href="/signup" className="text-white">Owner Login</NavLink>
               </NavItem>
