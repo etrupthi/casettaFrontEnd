@@ -13,11 +13,11 @@ class ViewHotel extends React.Component{
             <center>
                 <h1>Hello ViewHotel Page</h1> 
                 {/* <button className="danger">Click Me</button><br></br> */}
-                <H>
+                    <H style={{background:"white", width:"50%",height:"25vh",padding:"10vh"}}>
                     <span>{this.props.name}</span><br></br>
                     <span>{this.props.location}</span><br></br>
                     <span>{this.props.price}</span><br></br>  
-                </H>
+                    </H>
             </center>
         </div>)
     }

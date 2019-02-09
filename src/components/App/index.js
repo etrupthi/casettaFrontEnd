@@ -12,6 +12,7 @@ import {
    Switch,
    Redirect,
 } from 'react-router-dom'
+import SignTrial from "./signtrial";
 
 
 class App extends React.Component{
@@ -33,6 +34,7 @@ class App extends React.Component{
          headers.append('Access-Control-Allow-Credentials', 'true');
      
          headers.append('GET', 'POST');
+         
      
          fetch(url, {
              headers: headers,
@@ -95,6 +97,13 @@ class App extends React.Component{
                   return(
                      <div className="loginb">
                         <SignUpPage/>
+                     </div>
+                  )
+               }} />
+               <Route exact path="/signtrial" render={(props) => {
+                  return(
+                     <div className="loginb">
+                        <SignTrial history={props.history}/>
                      </div>
                   )
                }} />
