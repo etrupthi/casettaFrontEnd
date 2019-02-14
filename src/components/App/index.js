@@ -12,7 +12,6 @@ import {
    Switch,
    Redirect,
 } from 'react-router-dom'
-import SignTrial from "./signtrial";
 
 
 class App extends React.Component{
@@ -96,24 +95,27 @@ class App extends React.Component{
                <Route exact path="/signup" render={(props) => {
                   return(
                      <div className="loginb">
-                        <SignUpPage/>
-                     </div>
-                  )
-               }} />
-               <Route exact path="/signtrial" render={(props) => {
-                  return(
-                     <div className="loginb">
-                        <SignTrial history={props.history}/>
+                        <NavBar/>
+                        <SignUpPage history={props.history}/>
                      </div>
                   )
                }} />
                <Route exact path="/login" render={(props) => {
                   return(
                      <div className="loginb">
-                        <LoginPage/>
-                     </div>
+                        <NavBar/>
+                        <LoginPage history={props.history}/>
+                     </div> 
                   )
                }} />
+               <Route exact path="/ownerp" render={(props) => {
+                  return(
+                     <div>
+                        owner page on login
+                     </div>
+                  )
+
+               }}/>
                <Redirect to="/home"/>
             </Switch> 
          </Router>
