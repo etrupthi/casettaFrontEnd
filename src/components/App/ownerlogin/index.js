@@ -41,8 +41,14 @@ class LoginPage extends React.Component{
                  body: JSON.stringify(this.state.form) 
              })
         .then(console.log(this.state.form))
+        .then(response=>{console.log(response.status)
+            if(response.status==200)
+            {
+                this.props.history.push(`/addhotels`)
+            }
+        })
         .catch(() => console.log("Can’t access " + url + " response. "))
-        this.props.history.push(`/ownerp`)
+        
       }
    render(){
     const { form } = this.state;

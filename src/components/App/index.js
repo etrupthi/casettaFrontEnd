@@ -11,7 +11,9 @@ import {
    Route,
    Switch,
    Redirect,
-} from 'react-router-dom'
+} from 'react-router-dom';
+import AddHotels from "./addhotels";
+import HotelForm from "./hotelform";
 
 
 class App extends React.Component{
@@ -108,12 +110,21 @@ class App extends React.Component{
                      </div> 
                   )
                }} />
-               <Route exact path="/ownerp" render={(props) => {
+               <Route exact path="/addhotels" render={(props) => {
                   return(
-                     <div>
-                        owner page on login
+                     <div className="loginb">
+                        <NavBar/>
+                        <AddHotels/>
                      </div>
                   )
+               }} />
+                  <Route exact path="/hotelform" render={(props) => {
+                     return(
+                        <div className="loginb">
+                           <NavBar/>
+                           <HotelForm/>
+                        </div>
+                     )
 
                }}/>
                <Redirect to="/home"/>

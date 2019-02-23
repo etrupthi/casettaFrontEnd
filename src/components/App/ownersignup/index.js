@@ -42,8 +42,20 @@ class SignUpPage extends React.Component {
              body: JSON.stringify(this.state.form) 
          })
     .then(console.log(this.state.form))
+    .then(response=>{console.log(response.stringify)
+    if(response.status==200)
+    {
+
+      this.props.history.push(`/login`)
+    }
+    else
+    {
+      alert("User error");
+    }
+    })
+    .then(contents => {console.log("in signup fetch: "+ contents);})
     .catch(() => console.log("Can’t access " + url + " response. "))
-    this.props.history.push(`/login`)
+   
   }
 
   render(){
