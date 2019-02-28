@@ -3,6 +3,7 @@ import HotelList from "./hlist/index";
 import ViewHotel from "./viewhotel/index";
 import NavBar from "./navbar/index";
 import "./image/index.css";
+import "./index.css";
 import SignUpPage from "./ownersignup";
 import LoginPage from "./ownerlogin";
 import FooterPage from "./footer";
@@ -57,11 +58,13 @@ class App extends React.Component{
                <Route exact path="/home" render={(props) => {
                   return(
                      <div className="homeb">
-                        <NavBar/><br></br>
-                        <HotelList 
-                        hotel={this.state.data}
-                        history={props.history}/>
-                        <FooterPage/>
+                      <div className="img">
+                           <NavBar/><br></br>
+                           <HotelList 
+                           hotel={this.state.data}
+                           history={props.history}/>
+                        </div>
+                        <FooterPage />
                      </div>
                   )
                }} />
@@ -80,8 +83,8 @@ class App extends React.Component{
                   }
             
                   return(
-                     <div className="viewhb">
-                        <div style={{height:"100vh"}}>
+                     <div className="homeb">
+                        <div className="img">
                            <NavBar/>
                            <ViewHotel
                               name  = {newRecord.name} 
@@ -96,33 +99,45 @@ class App extends React.Component{
                }}/>
                <Route exact path="/signup" render={(props) => {
                   return(
-                     <div className="loginb">
+                     <div className="homeb">
+                     <div className="img">
                         <NavBar/>
                         <SignUpPage history={props.history}/>
+                     </div>
+                     <FooterPage />
                      </div>
                   )
                }} />
                <Route exact path="/login" render={(props) => {
                   return(
-                     <div className="loginb">
+                     <div className="homeb">
+                     <div className="img">
                         <NavBar/>
                         <LoginPage history={props.history}/>
                      </div> 
+                     <FooterPage />
+                     </div>
                   )
                }} />
                <Route exact path="/addhotels" render={(props) => {
                   return(
-                     <div className="loginb">
+                     <div className="homeb">
+                     <div className="img">
                         <NavBar/>
                         <AddHotels/>
+                        </div>
+                        <FooterPage />
                      </div>
                   )
                }} />
                   <Route exact path="/hotelform" render={(props) => {
                      return(
-                        <div className="loginb">
+                        <div className="homeb">
+                        <div className="img">
                            <NavBar/>
                            <HotelForm/>
+                           </div>
+                           <FooterPage />
                         </div>
                      )
 

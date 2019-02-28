@@ -31,8 +31,9 @@ class NavBar extends React.Component {
   render() {
     return (
       <div>
+      
         <Navbar color="none" light expand="md">
-          <NavbarBrand href="/" className="text-white">Casetta</NavbarBrand>
+          <NavbarBrand href="/" className="text-black"><b>Casetta</b></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -40,14 +41,14 @@ class NavBar extends React.Component {
             <SearchBar/>
             </NavItem>
               <NavItem>
-                <NavLink href="/login" className="text-white">Owner Login</NavLink>
+                <NavLink href="/login" className="text-black"><b>Owner Login</b></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap" className="text-white">GitHub</NavLink>
+                <NavLink href="https://github.com/reactstrap/reactstrap" className="text-black"><b>GitHub</b></NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret className="text-white">
-                 Price
+                <DropdownToggle nav caret className="text-black">
+                <b>Price</b>
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
@@ -65,6 +66,7 @@ class NavBar extends React.Component {
             </Nav>
           </Collapse>
         </Navbar>
+        
       </div>
     );
   }

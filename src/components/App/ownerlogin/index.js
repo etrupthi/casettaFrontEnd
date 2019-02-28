@@ -53,10 +53,7 @@ class LoginPage extends React.Component{
    render(){
     const { form } = this.state;
     return (
-      <div>
-            <MDBContainer className="mydiv">
-            <MDBRow>
-                <MDBCol md="6">
+      <div className="mydiv">
                 <MDBCard>
                 <form  onSubmit={this.submitHandler}>
             <MDBCardBody className="mx-4">
@@ -98,9 +95,8 @@ class LoginPage extends React.Component{
                     </p>
                     </MDBModalFooter>
                 </MDBCard>
-                </MDBCol>
-            </MDBRow>
-            </MDBContainer>
+
+           
         </div>
     );
     }

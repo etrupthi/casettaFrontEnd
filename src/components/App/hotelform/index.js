@@ -59,11 +59,8 @@ class HotelForm extends React.Component {
     render() {
         const { form } = this.state;
         return(
-        <div> 
-            <MDBContainer className="mydiv">
-            <MDBRow>
-              <MDBCol md="6">
-                <MDBCard>
+        <div > 
+                <MDBCard className="mydiv">
                     <form onSubmit={this.submitHandler}>
                   <MDBCardBody className="mx-4">
                     <div className="text-center">
@@ -114,9 +111,6 @@ class HotelForm extends React.Component {
                   </MDBCardBody>
                   </form>
                 </MDBCard>
-              </MDBCol>
-            </MDBRow>
-          </MDBContainer>
           </div>
         );
       };

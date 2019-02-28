@@ -1,6 +1,6 @@
 import React from 'react';
 import himage from "/Users/AkhilaV/Documents/casettafrontend/src/components/App/image/bg2.jpeg";
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol,MDBRow } from 'mdbreact';
 import "./index.css";
 class Hotel extends React.Component{
 
@@ -20,19 +20,19 @@ onViewClick(){
 render(){
         return(
             <div className="hstyle">
-            <MDBCol>
-            <MDBCard style={{ width: "45em" ,height: "22em",background: "black" }} >
+            
+            <MDBCard style={{ width: "20em" ,height: "20em",background: "white",flex:1 }} >
                 <MDBCardImage className="img-fluid" src={himage} waves />
-                <MDBCardBody className="text-white">
+                <MDBCardBody className="text-black">
                 <MDBCardTitle><span>{this.props.name}</span><br></br></MDBCardTitle>
-                <MDBCardText className="text-white">
+                <MDBCardText className="text-black">
                             <span>{this.props.location}</span><br></br>
                             <span>{this.props.price}</span><br></br>  
                 </MDBCardText>
                 <MDBBtn onClick={this.onViewClick}>view</MDBBtn>
                 </MDBCardBody>
             </MDBCard>
-            </MDBCol>        
+            
             </div>
         )
     }   
