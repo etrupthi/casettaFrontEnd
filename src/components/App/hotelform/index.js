@@ -48,6 +48,10 @@ class HotelForm extends React.Component {
              })
         .then(console.log(this.state.form))
         .then(response=>{console.log(response.stringify)
+          if(response.status==200)
+            {
+                this.props.history.push(`/home`)
+            }
         })
         //.then(contents => {console.log("in signup fetch: "+ contents);})
         .catch(() => console.log("Can’t access " + url + " response. "))
@@ -59,7 +63,7 @@ class HotelForm extends React.Component {
     render() {
         const { form } = this.state;
         return(
-        <div > 
+        <div  > 
                 <MDBCard className="mydiv">
                     <form onSubmit={this.submitHandler}>
                   <MDBCardBody className="mx-4">

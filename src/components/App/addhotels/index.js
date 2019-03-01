@@ -15,7 +15,7 @@ class AddHotels extends React.Component {
 
     render(){
         return(
-     <MDBContainer className="mydiv">
+     <MDBContainer className="mydiv1">
          <MDBRow>
          <MDBCol md="6">
          <MDBCard>

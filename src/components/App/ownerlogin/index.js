@@ -53,7 +53,8 @@ class LoginPage extends React.Component{
    render(){
     const { form } = this.state;
     return (
-      <div className="mydiv">
+      <center>
+      <div className="mydivl">
                 <MDBCard>
                 <form  onSubmit={this.submitHandler}>
             <MDBCardBody className="mx-4">
@@ -98,6 +99,7 @@ class LoginPage extends React.Component{
 
            
         </div>
+        </center>
     );
     }
 }

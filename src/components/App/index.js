@@ -113,7 +113,7 @@ class App extends React.Component{
                      <div className="homeb">
                      <div className="img">
                         <NavBar/>
-                        <LoginPage history={props.history}/>
+                        <center><LoginPage history={props.history}/></center>
                      </div> 
                      <FooterPage />
                      </div>
@@ -124,7 +124,7 @@ class App extends React.Component{
                      <div className="homeb">
                      <div className="img">
                         <NavBar/>
-                        <AddHotels/>
+                        <AddHotels history={props.history}/>
                         </div>
                         <FooterPage />
                      </div>
@@ -135,12 +135,11 @@ class App extends React.Component{
                         <div className="homeb">
                         <div className="img">
                            <NavBar/>
-                           <HotelForm/>
-                           </div>
+                           <HotelForm history={props.history}/>
+                        </div>
                            <FooterPage />
                         </div>
                      )
-
                }}/>
                <Redirect to="/home"/>
             </Switch> 
